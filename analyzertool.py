@@ -1,8 +1,3 @@
-# simple analyzer tool
-# this program can check IPs, domains and hashes
-# I try to use VirusTotal, AbuseIPDB, Web-check, RDAP and Lookyloo
-# comments are in english and explained like I am learning :)
-
 import requests
 import ipaddress
 import re
