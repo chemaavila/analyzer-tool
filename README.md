@@ -1,4 +1,4 @@
-ANALYZER TOOL - README (junior style)
+ANALYZER TOOL - README
 ======================================
 
 1) What this app does
