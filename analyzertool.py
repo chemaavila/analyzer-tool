@@ -8,8 +8,8 @@ import ipaddress
 import re
 
 # API keys (you need your own)
-VT_API_KEY = "bd6bef20f1bcedf5d3e13c841c71cd411f79a73a1ac10e11df5badee06f4cb8e"
-ABUSEIPDB_API_KEY = "a69357b25dfeb78a537e1c34a45c06e06d19208b5dc4ad360220f52b8a3992c8466dc31678df1daf"
+VT_API_KEY = "YOUR_API_KEY_HERE"
+ABUSEIPDB_API_KEY = "YOUR_API_KEY_HERE"
 
 # headers for the APIs
 vt_headers = {"x-apikey": VT_API_KEY}
