@@ -21,7 +21,7 @@ NEEDED_KEYS = [
     "XFORCE_API_PASSWORD",
 ]
 
-# basic .env handling (not fancy)
+# env proccess 
 def read_env():
     d = {}
     if ENV_PATH.exists():
@@ -58,7 +58,6 @@ def ask_keys():
     }
     for k in NEEDED_KEYS:
         val = (os.getenv(k) or "").strip()
-        # junior style: just check empty or starts with http/python
         if (not val) or val.lower().startswith(("http","python","curl","export")):
             newv = input(prompts.get(k,f"{k}: "))
             os.environ[k] = newv
@@ -112,8 +111,6 @@ def colorize(msg):
 
 def strip_ansi(s):
     return re.sub(r"\x1b\[[0-9;]*m","",s)
-
-# providers (repetitive style, no helper func for http errors)
 
 def vt_verdict(val):
     try:
