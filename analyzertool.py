@@ -1,3 +1,4 @@
+
 import os
 import re
 import time
@@ -21,7 +22,7 @@ NEEDED_KEYS = [
     "XFORCE_API_PASSWORD",
 ]
 
-# env proccess 
+# .env
 def read_env():
     d = {}
     if ENV_PATH.exists():
@@ -58,6 +59,7 @@ def ask_keys():
     }
     for k in NEEDED_KEYS:
         val = (os.getenv(k) or "").strip()
+        # junior style: just check empty or starts with http/python
         if (not val) or val.lower().startswith(("http","python","curl","export")):
             newv = input(prompts.get(k,f"{k}: "))
             os.environ[k] = newv
@@ -111,6 +113,8 @@ def colorize(msg):
 
 def strip_ansi(s):
     return re.sub(r"\x1b\[[0-9;]*m","",s)
+
+# check
 
 def vt_verdict(val):
     try:
@@ -288,7 +292,7 @@ def print_table(rows,save_txt):
         except:
             print("could not save results")
 
-# main loop
+
 def main():
     print("Analyzer tool")
     print("Example: 8.8.8.8, google.com, http://example.com, d41d8cd98f00b204e9800998ecf8427e")
